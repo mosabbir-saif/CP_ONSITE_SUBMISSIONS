@@ -5,7 +5,7 @@
 
 ## Problem Statement
 
-In the Kingdom of Chemistry, every citizen has a unique elemental ID ranging from $1$ to $n$. King Pyrite, whose elemental ID is $n$, rules over the kingdom with an aura of false purity.
+In the Kingdom of Chemistry, every citizen has a unique elemental ID ranging from `1` to `n`. King Pyrite, whose elemental ID is `n`, rules over the kingdom with an aura of false purity.
 
 To solidify his rule, the king seeks to form an elite council known as *The Noble Catalysts*. These individuals will be publicly regarded as the most brilliant minds in the kingdom, yet their true purpose is not to provide wisdom but to accelerate the king's plans without resistance. Like chemical catalysts, they thrive under King Pyrite's influence, ensuring that his decrees are swiftly accepted by the people without question.
 
@@ -13,24 +13,24 @@ The king has two strict criteria for selecting his advisors:
 1. **Loyalty** — An advisor must always agree with the king's decisions.
 2. **Credibility** — The citizens must never doubt the intelligence or capabilities of the chosen advisors.
 
-The kingdom's Royal Alchemist has prophesied that for two citizens with elemental IDs $x$ and $y$ where $x < y$, the person with ID $x$ will always agree with the person with ID $y$ if the following condition holds:
+The kingdom's Royal Alchemist has prophesied that for two citizens with elemental IDs `x` and `y` where `x < y`, the person with ID `x` will always agree with the person with ID `y` if the following condition holds:
 
-$$ \gcd(x, y) + \text{lcm}(x, y) = x + y $$
+`` \gcd(x, y) + \text{lcm}(x, y) = x + y ``
 
-Here, $\gcd(x, y)$ denotes the greatest common divisor of $x$ and $y$, and $\text{lcm}(x, y)$ denotes the least common multiple of $x$ and $y$.
+Here, `\gcd(x, y)` denotes the greatest common divisor of `x` and `y`, and `\text{lcm}(x, y)` denotes the least common multiple of `x` and `y`.
 
 However, there is a catch. To maintain the illusion of a flawless selection, King Pyrite will only invite citizens whose elemental ID is a perfect square, as these individuals are perceived as the "purest" in the kingdom.
 
-Given the value of $n$, determine how many citizens can be selected as advisors by King Pyrite such that all of the following conditions hold:
+Given the value of `n`, determine how many citizens can be selected as advisors by King Pyrite such that all of the following conditions hold:
 - They will always agree with the king.
-- $x$ is a perfect square.
-- $x < n$ (the king himself cannot be an advisor).
+- `x` is a perfect square.
+- `x < n` (the king himself cannot be an advisor).
 
 ## Input
 
-The first line of the input contains a single integer $t$ ($1 \le t \le 10^5$) — the number of test cases.
+The first line of the input contains a single integer `t` (`1 \le t \le 10^5`) — the number of test cases.
 
-Each test case consists of a single line containing a single integer $n$ ($2 \le n \le 10^9$) — the number of citizens.
+Each test case consists of a single line containing a single integer `n` (`2 \le n \le 10^9`) — the number of citizens.
 
 ## Output
 
