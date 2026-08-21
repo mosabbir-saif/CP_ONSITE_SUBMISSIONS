@@ -2,19 +2,28 @@
 
 **Limits:** 1s, 256 MB
 
-Upobir starts at `(0,0)` on an infinite chessboard and wants to reach `(x,x)`.
+Upobir is playing a game on an infinite `2D` grid. He starts at the origin `(0,0)` and wants to travel to the target coordinate `(x,x)`. To navigate the grid, Upobir can perform two types of moves:
 
-He has two possible actions:
+Chess Knight Move: 
+From his current position `(x1,y1)`, he can move to any coordinate `(x2,y2)` such that `|x1−x2|=1` and `|y1−y2|=2`, or `|x1−x2|=2` and `|y1−y2|=1`. This move costs 1 unit of energy.
+Special Jump: He can perform a unique jump to instantly teleport from his `current` position directly to the target `(x,x)`. This unique move does not follow standard chess rules and costs `k` units of energy.
+Given `x` and `k, find the minimum total energy Upobir needs to spend to reach `(x,x)`.
 
-1. **Knight Move** (cost = 1):
+**Input**
+The first line contains a single integer `t` (`1≤t≤10^5`) — the number of test cases.
 
-   * `(±1, ±2)` or `(±2, ±1)` as in chess.
+The only line of each test case contains two integers `x` and `k` (`1≤x≤10^9, 1≤k≤10^9`) — the coordinate value defining the target `(x,x)`, and the energy cost of the special jump.
 
-2. **Special Jump** (cost = `k`):
+**Output**
+For each test case, print a single integer — the minimum total energy required to reach `(x,x)`.
 
-   * Instantly teleport from the current position directly to `(x,x)`.
-
-Find the minimum energy required.
+**Example**
+|Input|Output|
+|-----|------|
+| 3 | |
+| 1 5 | 2 |
+| 3 2 | 2 |
+| 3 3 | 2 |
 
 
 ## Solve(C++)

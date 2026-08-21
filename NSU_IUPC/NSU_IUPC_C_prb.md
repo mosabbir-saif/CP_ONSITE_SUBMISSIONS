@@ -7,25 +7,23 @@
 
 Professor Aubergine cares a lot about his citation count. He wants to increase his total number of citations as much as possible.
 
-He plans to publish exactly `n` papers over the next `k` months. In the `i`-th month, he can publish at most `a_i` papers due to submission limits.
+He plans to publish exactly `n` papers over the next `k` months. In the `i`-th month, he can publish at most `ai` papers due to submission limits.
 
-Every paper he publishes in a month self-cites all of his papers published in all previous months. However, papers published in the same month cannot cite each other.
+Every paper he publishes in a month self cites all of his papers published in all previous months. However, papers published in the same month cannot cite each other.
 
-Let `b_i` be the number of papers he publishes in month `i`. Your task is to find a sequence `b_1, b_2, \dots, b_k` that gives the maximum possible number of total citations. The sequence must satisfy `0 \le b_i \le a_i` for all `i`, and the total sum of all `b_i` must be exactly `n`.
+Let `bi` be the number of papers he publishes in month `i`. Your task is to find a sequence `b1,b2,…,bk` that gives the maximum possible number of total citations. The sequence must satisfy `0≤bi≤ai` for all `i`, and the total sum of all `bi` must be exactly `n`.
 
-## Input
+**Input**
+The first line contains a single integer `t` (`1≤t≤10^3`) — the number of test cases. Then the description of the test cases follows.
 
-The first line contains a single integer `t` (`1 \le t \le 10^3`) — the number of test cases. Then the description of the test cases follows.
+The first line of each test case contains two space-separated integers `n` and `k` (`1≤n≤2⋅10^15, 1≤k≤2⋅10^6`) — the total number of papers and the number of months.
 
-The first line of each test case contains two space-separated integers `n` and `k` (`1 \le n \le 2 \cdot 10^{15}`, `1 \le k \le 2 \cdot 10^6`) — the total number of papers and the number of months.
+The second line of each test case contains `k` space-separated integers `a1,a2,…,ak` (`0≤ai≤10^9, n≤a1+a2+⋯+ak`) — the maximum number of papers he can publish in each month.
 
-The second line of each test case contains `k` space-separated integers `a_1, a_2, \dots, a_k` (`0 \le a_i \le 10^9`, `n \le a_1 + a_2 + \dots + a_k`) — the maximum number of papers he can publish in each month.
+It is guaranteed that the sum of `k` over all test cases does not exceed `2⋅10^6`.
 
-It is guaranteed that the sum of `k` over all test cases does not exceed `2 \cdot 10^6`.
-
-## Output
-
-For each test case, print `k` space-separated integers `b_1, b_2, \dots, b_k` — the optimal number of papers to publish each month.
+**Output**
+For each test case, print `k` space-separated integers `b1,b2,…,bk` — the optimal number of papers to publish each month.
 
 If there are multiple sequences that give the same maximum number of citations, you may print any of them.
 
