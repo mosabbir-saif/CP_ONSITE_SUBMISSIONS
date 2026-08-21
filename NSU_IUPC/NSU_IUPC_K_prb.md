@@ -9,12 +9,12 @@ From his current position `(x1,y1)`, he can move to any coordinate `(x2,y2)` suc
 Special Jump: He can perform a unique jump to instantly teleport from his `current` position directly to the target `(x,x)`. This unique move does not follow standard chess rules and costs `k` units of energy.
 Given `x` and `k, find the minimum total energy Upobir needs to spend to reach `(x,x)`.
 
-**Input**
+# Input
 The first line contains a single integer `t` (`1≤t≤10^5`) — the number of test cases.
 
 The only line of each test case contains two integers `x` and `k` (`1≤x≤10^9, 1≤k≤10^9`) — the coordinate value defining the target `(x,x)`, and the energy cost of the special jump.
 
-**Output**
+# Output
 For each test case, print a single integer — the minimum total energy required to reach `(x,x)`.
 
 **Example**

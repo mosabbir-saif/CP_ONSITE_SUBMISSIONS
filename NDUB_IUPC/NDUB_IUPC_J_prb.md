@@ -2,78 +2,39 @@
 
 **Limits:** 1s, 256 MB
 
-In the Lalbagh Fort locking mechanism, the number of gears installed after `k` days is:
+In the heart of 17th-century Dhaka, the construction of the Lalbagh Fort is underway. To secure the southern gate, the royal architect has designed a complex locking mechanism consisting of `n` interlocking brass gears.
 
-[
-n = 1 + 3 + 5 + \cdots + (2k-1) = k^2
-]
+The total number of gears, `n`, is determined by the number of days `k` spent on the gate's construction. On the `1st` day, `1` gear was installed. On each subsequent day, the builders added the next consecutive odd number of gears (3 on the second day, 5 on the third, and so on).
 
-The gears are numbered `1, 2, ..., n`, and gear `x` has exactly `x` teeth.
+Each gear in the system is unique, numbered `1,2,…,n`. A gear numbered `x` has exactly `x` teeth. For the mechanism to rotate without friction, the architect only selects gears that are mechanically stable.
 
-A gear is considered **stable** if the number of divisors of `x` that are even equals the number of divisors of `x` that are odd.
+The stability of a gear is determined by its rotational partitions. A gear with `x` teeth can be partitioned into `m` equal-sized segments, where `m` is any integer that divides `x`. A gear is mechanically stable only if the number of ways to partition it into segments containing an even number of teeth is perfectly balanced by the number of ways to partition it into segments containing an odd number of teeth.
 
-Given `k`, determine how many stable gears exist among gears `1` through `k²`.
+For example, consider gear `6`. It can be partitioned into segments of size `1, 2, 3, or 6`.
 
-### Observation
+Segments of size `2` and `6` are even-sized.
+Segments of size `1` and `3` are odd-sized.
+Since there are exactly two even-sized partition options and two odd-sized partition options, gear `6` is stable.
 
-Let
+Given the number of construction days `k`, calculate how many mechanically stable gears are in the Lalbagh gate.
 
-[
-x = 2^a \cdot m
-]
+# Input
+The first line contains a single integer `t` (`1≤t≤10^6`) — the number of test cases.
 
-where `m` is odd.
+Each of the next `t` lines contains a single integer `k` (`1≤k≤2^32`) — the number of construction days.
 
-The number of odd divisors of `x` is:
+# Output
+For each test case, output a single integer — the number of mechanically stable gears among all gears numbered from `1` to `n`.
 
-[
-d(m)
-]
+# Example
+|Input|Output|
+|-----|------|
+| 4 | |
+| 1 | 0 |
+| 2 | 1 |
+| 5 | 6 |
+| 10 | 25 |
 
-since an odd divisor cannot contain any factor of `2`.
-
-The total number of divisors is:
-
-[
-(a+1)d(m)
-]
-
-Therefore the number of even divisors is:
-
-[
-(a+1)d(m)-d(m)=a,d(m)
-]
-
-For stability:
-
-[
-a,d(m)=d(m)
-]
-
-Since `d(m) > 0`, we get:
-
-[
-a=1
-]
-
-Thus a gear is stable **iff it is divisible by 2 but not by 4**, i.e.
-
-[
-v_2(x)=1
-]
-
-So we only need to count numbers in `[1, k²]` that are multiples of `2` but not multiples of `4`.
-
-The count is:
-
-[
-\left\lfloor \frac{k^2}{2} \right\rfloor -
-\left\lfloor \frac{k^2}{4} \right\rfloor
-]
-
-### Complexity
-
-`O(1)` per test case.
 
 ## Solve(C++)
 

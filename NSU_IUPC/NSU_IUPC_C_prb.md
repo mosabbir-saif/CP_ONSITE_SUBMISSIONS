@@ -13,7 +13,7 @@ Every paper he publishes in a month self cites all of his papers published in al
 
 Let `bi` be the number of papers he publishes in month `i`. Your task is to find a sequence `b1,b2,…,bk` that gives the maximum possible number of total citations. The sequence must satisfy `0≤bi≤ai` for all `i`, and the total sum of all `bi` must be exactly `n`.
 
-**Input**
+# Input
 The first line contains a single integer `t` (`1≤t≤10^3`) — the number of test cases. Then the description of the test cases follows.
 
 The first line of each test case contains two space-separated integers `n` and `k` (`1≤n≤2⋅10^15, 1≤k≤2⋅10^6`) — the total number of papers and the number of months.
@@ -22,7 +22,7 @@ The second line of each test case contains `k` space-separated integers `a1,a2,�
 
 It is guaranteed that the sum of `k` over all test cases does not exceed `2⋅10^6`.
 
-**Output**
+# Output
 For each test case, print `k` space-separated integers `b1,b2,…,bk` — the optimal number of papers to publish each month.
 
 If there are multiple sequences that give the same maximum number of citations, you may print any of them.

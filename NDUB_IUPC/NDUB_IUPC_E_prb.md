@@ -2,56 +2,57 @@
 
 **Limits:** 1s, 256 MB
 
-Professor Raj Chandra Bose asked Donald Knuth to complete a partially known permutation.
+In the late 1950s, the renowned Bengali mathematician Professor Raj Chandra Bose was working to disprove Euler's long-standing conjecture on Latin Squares at Case Institute of Technology. During his visit, he noticed an exceptional undergraduate student attending his graduate level classes. Impressed by his ability, he invited the student, Donald Knuth, to assist with computational tasks.
 
-You are given an array `a` of length `n`. Some positions contain known values, while missing values are represented by `-1`.
+As part of this work, Knuth needed to construct a `permutation` of length `n`, but only a partial version of the permutation is known.
 
-Your task is to replace every `-1` with a distinct value from `1` to `n` so that:
+He is given an array `a` of length `n`, where some elements are known and others are missing. Missing elements are represented by `−1`.
 
-1. The final array becomes a valid permutation of `1...n`.
-2. The value of
+Your task is to help Knuth replace each occurrence of `−1` in `a` with a value from `1` to `n` such that:
 
-[
-\sum_{i=2}^{n}(a_i-a_{i-1})
-]
+The final array `a` becomes a valid permutation of integers from `1` to `n`.
 
-is minimized.
+The value of the following expression is minimized:
 
-If multiple optimal permutations exist, output any of them.
+```
+∑i=2n(ai − ai−1)
+```
+If multiple valid permutations achieve the minimum value, print any of them.
 
-### Observation
+Note: A permutation of length `n` is an array of `n` distinct integers from `1` to `n`, each appearing exactly once. For example, 
+`[1]`, `[4,3,5,1,2]` and `[3,2,1]` are permutations, while `[1,1]` and `[4,3,1]` are not.
 
-The objective simplifies dramatically:
+# Input
+The first line contains an integer `t` (`1≤t≤10^4`), the number of test cases. The description of the test cases follows.
 
-[
-(a_2-a_1)+(a_3-a_2)+\cdots+(a_n-a_{n-1})
-]
+For each test case, the first line contains an integer `n` (`2≤n≤2⋅10^5`), the length of the array.
 
-All middle terms cancel out, leaving
+The second line contains `n` integers `a1,a2,…,an`​  (`−1≤ai≤n, ai≠0`) , where `ai=−1` denotes a missing value.
 
-[
-a_n-a_1
-]
+It is guaranteed that all positive values in a are distinct.
 
-So we only need to minimize `a[n] - a[1]`.
+The sum of `n` over all test cases does not exceed `2⋅10^5`.
 
-Let `U` be the set of unused numbers.
+# Output
+For each test case, print a single line containing `n` space-separated integers, representing the completed permutation.
 
-* If both endpoints are fixed, the answer is already determined.
-* If `a[1] = -1`, assign the **largest** unused number to position `1`.
-* If `a[n] = -1`, assign the **smallest** unused number to position `n`.
-* If both endpoints are missing, assign:
+If there are multiple valid answers, print any of them.
 
-  * largest unused number to position `1`
-  * smallest unused number to position `n`
+## Example
+**Input**
+```
+2
+3
+-1 3 -1
+5
+-1 2 -1 -1 3
+```
 
-This minimizes `a[n] - a[1]`.
-
-After fixing the endpoints, fill all remaining `-1` positions with any remaining unused numbers.
-
-### Complexity
-
-Each test case uses a set of unused values and performs `O(n log n)` operations.
+**Output**
+```
+2 3 1 
+5 2 4 1 3 
+```
 
 ## Solve(C++)
 

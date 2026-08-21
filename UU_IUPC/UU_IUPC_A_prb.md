@@ -14,7 +14,7 @@ You are given an undirected graph with n vertices and m edges, where each edge h
     - m lines follow: u, v, w (1 ≤ u, v ≤ n, 1 ≤ w ≤ 10^9). No self-loops or multiple edges.
 - Sum of n and sum of m across all test cases ≤ 3·10^5.
 
-**Output**
+# Output
 For each test case output n integers a1, a2, …, an — any valid array satisfying the conditions, or -1 if impossible.
 
 **Example**

@@ -27,7 +27,7 @@ Given the value of `n`, determine how many citizens can be selected as advisors 
 
 They will always agree with the king. `x` is a perfect square. `x<n` (the king himself cannot be an advisor).
 
-**Input**
+## Input
 The first line of the input contains a single integer `t` (`1≤t≤10^5`) — the number of test cases.
 
 Each test case consists of a single line containing a single integer `n` (`2≤n≤10^9`) — the number of citizens.
